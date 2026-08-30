@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-body antialiased overflow-x-hidden m-0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@layer utilities {
+  .wrap {
+    @apply max-w-container mx-auto px-gutter;
+  }
+  
+  .eyebrow-pill {
+    @apply inline-flex items-center gap-2 bg-white border border-line py-2 px-[18px] rounded-pill text-[14px] text-ink font-medium;
+  }
+  .eyebrow-pill .dot {
+    @apply w-1.5 h-1.5 rounded-full bg-ink inline-block;
+  }
+  
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-[15px] font-medium no-underline transition-opacity duration-200 hover:opacity-60;
+  }
+  .link-arrow span {
+    @apply underline underline-offset-4;
+  }
+  .link-arrow svg {
+    @apply w-3.5 h-3.5;
+  }
+  
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)];
+  }
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+}
