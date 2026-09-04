@@ -7,10 +7,7 @@ import TechStack from '../components/TechStack';
 import Experience from '../components/Experience';
 import Portfolio from '../components/Portfolio';
 import Footer from '../components/Footer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 const Home: React.FC = () => {
-  useScrollReveal();
   const location = useLocation();
 
   useEffect(() => {

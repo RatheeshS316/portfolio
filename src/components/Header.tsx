@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useActiveSection } from '../hooks/useActiveSection';
+import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  const sectionIds = useMemo(() => ['top', 'about', 'portfolio', 'experience', 'blog'], []);
+  const activeSection = useActiveSection(sectionIds);
+
+  const desktopLinks = [
+    { id: 'about', label: 'About Me' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { id: 'experience', label: 'Services' },
+    { id: 'blog', label: 'Blog' },
+  ];
+
+  const getMobileLinkClass = (section: string) =>
+    `p-[18px_var(--gutter)] text-[17px] border-b border-line transition-colors ${activeSection === section ? 'bg-ink/5 font-semibold text-ink' : 'text-ink/80'}`;
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -16,11 +32,25 @@ const Header: React.FC = () => {
         </a>
 
         <ul className="hidden md:flex items-center gap-10 list-none m-0 p-0">
-          <li><a href="/#about" className="text-[15px] text-ink relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-ink hover:after:w-full transition-all duration-250 ease-out">About Me</a></li>
-          <li><a href="/#portfolio" className="text-[15px] text-ink relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-ink hover:after:w-full transition-all duration-250 ease-out">Portfolio</a></li>
-          <li><a href="/#experience" className="text-[15px] text-ink relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-ink hover:after:w-full transition-all duration-250 ease-out">Services</a></li>
-          <li><a href="/#blog" className="text-[15px] text-ink relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-ink hover:after:w-full transition-all duration-250 ease-out">Blog</a></li>
-          <li><a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-ink relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-ink hover:after:w-full transition-all duration-250 ease-out">My Resume</a></li>
+          {desktopLinks.map((link) => (
+            <li key={link.id} className="relative">
+              <a 
+                href={`/#${link.id}`} 
+                className={`text-[15px] font-medium relative pb-1 transition-colors duration-250 ease-out z-10 block ${activeSection === link.id ? 'text-ink' : 'text-ink/60 hover:text-ink/80'}`}
+              >
+                {link.label}
+              </a>
+              {activeSection === link.id && (
+                <motion.div
+                  layoutId="active-underline"
+                  className="absolute left-0 bottom-0 h-[1.5px] w-full bg-ink"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+              )}
+            </li>
+          ))}
+          <li><a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-ink/80 relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full hover:text-ink transition-all duration-250 ease-out">My Resume</a></li>
         </ul>
 
         <Link to="/contact" className="hidden md:inline-flex link-arrow">
@@ -41,11 +71,11 @@ const Header: React.FC = () => {
       </nav>
 
       <div className={`md:hidden flex flex-col bg-bg border-t border-line overflow-hidden transition-all duration-300 ease-out ${menuOpen ? 'max-h-[400px]' : 'max-h-0'}`}>
-        <a href="/#about" onClick={toggleMenu} className="p-[18px_var(--gutter)] text-[17px] border-b border-line">About Me</a>
-        <a href="/#portfolio" onClick={toggleMenu} className="p-[18px_var(--gutter)] text-[17px] border-b border-line">Portfolio</a>
-        <a href="/#experience" onClick={toggleMenu} className="p-[18px_var(--gutter)] text-[17px] border-b border-line">Services</a>
-        <a href="/#blog" onClick={toggleMenu} className="p-[18px_var(--gutter)] text-[17px] border-b border-line">Blog</a>
-        <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="p-[18px_var(--gutter)] text-[17px] border-b border-line">My Resume</a>
+        <a href="/#about" onClick={toggleMenu} className={getMobileLinkClass('about')}>About Me</a>
+        <a href="/#portfolio" onClick={toggleMenu} className={getMobileLinkClass('portfolio')}>Portfolio</a>
+        <a href="/#experience" onClick={toggleMenu} className={getMobileLinkClass('experience')}>Services</a>
+        <a href="/#blog" onClick={toggleMenu} className={getMobileLinkClass('blog')}>Blog</a>
+        <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="p-[18px_var(--gutter)] text-[17px] text-ink/80 border-b border-line">My Resume</a>
         <Link to="/contact" onClick={toggleMenu} className="p-[18px_var(--gutter)] text-[17px]">Book A Call ↗</Link>
       </div>
     </header>

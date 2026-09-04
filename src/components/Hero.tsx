@@ -1,49 +1,76 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  };
+
   return (
     <section className="relative min-h-[calc(100vh-88px)] pb-[60px]" id="hero" aria-label="Introduction">
       <div className="wrap grid grid-cols-1 lg:grid-cols-[60px_1fr_minmax(auto,620px)] items-stretch min-h-[calc(100vh-160px)]">
         {/* Rail - Hidden on mobile, visible on lg */}
-        <div className="hidden lg:flex flex-col items-center justify-end pb-5">
-          <span className="rotate-[-180deg] [writing-mode:vertical-rl] text-[14px] font-medium tracking-[0.1em] uppercase mb-[30px] whitespace-nowrap">
+        <motion.div 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }}
+          className="hidden lg:flex flex-col items-center justify-end pb-5"
+        >
+          <span className="rotate-[-180deg] [writing-mode:vertical-rl] text-[14px] font-light tracking-[0.1em] uppercase mb-[30px] whitespace-nowrap">
             FullStack Developer
           </span>
           <span className="w-[1px] h-[100px] bg-line" aria-hidden="true"></span>
-        </div>
+        </motion.div>
 
         {/* Main */}
-        <div className="flex flex-col justify-center lg:pl-[60px] lg:pr-[40px] pt-10 lg:pt-0">
-          <div className="flex gap-[40px] mb-[40px] lg:mb-[60px]">
+        <motion.div 
+          className="flex flex-col justify-center lg:pl-[60px] lg:pr-[40px] pt-10 lg:pt-0"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div variants={itemVariants} className="flex gap-[40px] mb-[40px] lg:mb-[60px]">
             <div>
-              <p className="font-display text-[42px] font-light leading-none tracking-[-0.03em] m-0 mb-2">30+</p>
-              <p className="text-[14px] text-ink-soft m-0 max-w-[80px] leading-[1.4]">Projects completed</p>
+              <p className="font-display text-[42px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">30+</p>
+              <p className="text-[14px] font-light text-ink-soft m-0 max-w-[80px] leading-[1.4]">Projects completed</p>
             </div>
             <div>
-              <p className="font-display text-[42px] font-light leading-none tracking-[-0.03em] m-0 mb-2">100+</p>
-              <p className="text-[14px] text-ink-soft m-0 max-w-[80px] leading-[1.4]">Coding Count</p>
+              <p className="font-display text-[42px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">100+</p>
+              <p className="text-[14px] font-light text-ink-soft m-0 max-w-[80px] leading-[1.4]">Coding Count</p>
             </div>
-          </div>
+          </motion.div>
 
-          <h1 className="font-display text-[clamp(80px,10vw,160px)] font-normal leading-[0.85] tracking-[-0.04em] m-0 mb-[20px] lg:mb-[30px]">
+          <motion.h1 variants={itemVariants} className="font-display text-[clamp(80px,10vw,160px)] font-light leading-[0.85] tracking-[-0.04em] m-0 mb-[20px] lg:mb-[30px]">
             Hello
-          </h1>
-          <p className="text-[clamp(20px,3vw,32px)] font-light text-ink-soft leading-[1.3] max-w-[480px] m-0 flex gap-[15px]">
-            <span className="font-light">—</span> It's S.Ratheesh a FullStack Developer
-          </p>
+          </motion.h1>
+          <motion.p variants={itemVariants} className="text-[clamp(14px,2vw,22px)] font-extralight text-ink-soft leading-[1.3] m-0 flex gap-[15px] whitespace-nowrap">
+            <span className="font-extralight">—</span> It's S.Ratheesh a FullStack Developer
+          </motion.p>
 
-          <img 
+          <motion.img 
+            variants={itemVariants}
             className="block lg:hidden rounded-[20px] mt-[40px] mb-[40px] w-full max-w-[340px] object-contain aspect-[3/3.6]" 
             src="/assets/portrait_hero_transparent.png" 
             alt="Portrait of S. Ratheesh, FullStack Developer, wearing a dark blazer over a white shirt" 
           />
 
-          <button 
-            className="hidden lg:inline-flex mt-[80px] bg-transparent border-none p-0 items-center gap-[10px] text-[14px] font-medium uppercase tracking-[0.05em] text-ink cursor-pointer hover:opacity-70 transition-opacity" 
+          <motion.button 
+            variants={itemVariants}
+            className="hidden lg:inline-flex mt-[80px] bg-transparent border-none p-0 items-center gap-[10px] text-[14px] font-light uppercase tracking-[0.05em] text-ink cursor-pointer hover:opacity-70 transition-opacity" 
             onClick={scrollToAbout}
           >
             Scroll down
@@ -51,13 +78,25 @@ const Hero: React.FC = () => {
               <line x1="12" y1="5" x2="12" y2="19"/>
               <polyline points="19 12 12 19 5 12"/>
             </svg>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Portrait Wrap - visible on lg */}
-        <div className="hidden lg:block relative rounded-lg overflow-hidden mt-5">
-          <img className="w-full h-full object-cover" src="/assets/portrait_hero_transparent.png" alt="Portrait of S. Ratheesh" />
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+          className="hidden lg:block relative rounded-lg overflow-hidden mt-5"
+        >
+          <motion.img 
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
+            className="w-full h-full object-cover" 
+            src="/assets/portrait_hero_transparent.png" 
+            alt="Portrait of S. Ratheesh" 
+          />
+        </motion.div>
       </div>
     </section>
   );

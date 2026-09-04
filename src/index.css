@@ -43,10 +43,4 @@
     @apply w-3.5 h-3.5;
   }
   
-  .reveal {
-    @apply opacity-0 translate-y-8 transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)];
-  }
-  .reveal.active {
-    @apply opacity-100 translate-y-0;
-  }
 }
