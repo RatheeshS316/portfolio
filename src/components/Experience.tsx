@@ -31,8 +31,8 @@ const experiences = [
     subtitle: 'Responsive Netflix clone with authentication & UI',
     desc: 'Developed a responsive Netflix clone featuring user authentication, dynamic movie listings, and a polished user interface matching the original design.',
     tags: ['React.js', 'CSS', 'Firebase'],
-    image: '/assets/netflix.jpg',
-    githubLink: null,
+    image: '/assets/card_tailwind.jpg',
+    githubLink: 'https://github.com/RatheeshS316/netflix-clone',
     demoLink: '#'
   },
   {
@@ -43,7 +43,7 @@ const experiences = [
     desc: 'Built a Hotstar clone with video browsing UI, categories, and dynamic content fetching. Focused on creating a seamless media consumption experience.',
     tags: ['React.js', 'CSS', 'Firebase'],
     image: '/assets/card_nextjs.jpg',
-    githubLink: null,
+    githubLink: 'https://github.com/RatheeshS316/disney-hotstar-clone',
     demoLink: '#'
   },
   {
