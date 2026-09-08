@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <li key={link.id} className="relative">
               <a 
                 href={`/#${link.id}`} 
-                className={`text-[15px] font-medium relative pb-1 transition-colors duration-250 ease-out z-10 block ${activeSection === link.id ? 'text-ink' : 'text-ink/60 hover:text-ink/80'}`}
+                className={`text-[15px] font-medium relative pb-1 transition-all duration-250 ease-out z-10 block ${activeSection === link.id ? 'text-ink' : 'text-ink/80 hover:text-ink after:content-[\"\"] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full'}`}
               >
                 {link.label}
               </a>
@@ -83,3 +83,6 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+
+

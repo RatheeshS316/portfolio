@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const experiences = [
@@ -9,7 +9,7 @@ const experiences = [
     subtitle: 'Agricultural disease detection from plant images',
     desc: 'A web-based disease prediction solution to help farmers identify diseases affecting plant leaves, fruits, and vegetables from affected plant images.',
     tags: ['React.js', 'Django', 'Machine Learning'],
-    image: '/assets/card_springboot.jpg',
+    image: '/assets/diseaseprediction.jpg',
     githubLink: 'https://github.com/RatheeshS316/disease-prediction',
     demoLink: '#'
   },
@@ -20,7 +20,7 @@ const experiences = [
     subtitle: 'Platform connecting people with missing belongings',
     desc: 'A web-based Lost & Found platform that allows users to report lost products and upload details about found products to connect people with their missing belongings.',
     tags: ['React.js', 'Django', 'PostgreSQL'],
-    image: '/assets/tech3.jpg',
+    image: '/assets/lostandfound.jpg',
     githubLink: 'https://github.com/RatheeshS316/lost-found',
     demoLink: '#'
   },
@@ -31,7 +31,7 @@ const experiences = [
     subtitle: 'Responsive Netflix clone with authentication & UI',
     desc: 'Developed a responsive Netflix clone featuring user authentication, dynamic movie listings, and a polished user interface matching the original design.',
     tags: ['React.js', 'CSS', 'Firebase'],
-    image: '/assets/card_tailwind.jpg',
+    image: '/assets/netflix.jpg',
     githubLink: 'https://github.com/RatheeshS316/netflix-clone',
     demoLink: '#'
   },
@@ -42,7 +42,7 @@ const experiences = [
     subtitle: 'Video browsing UI with dynamic categories',
     desc: 'Built a Hotstar clone with video browsing UI, categories, and dynamic content fetching. Focused on creating a seamless media consumption experience.',
     tags: ['React.js', 'CSS', 'Firebase'],
-    image: '/assets/card_nextjs.jpg',
+    image: '/assets/hotstar.jpg',
     githubLink: 'https://github.com/RatheeshS316/disney-hotstar-clone',
     demoLink: '#'
   },
@@ -50,10 +50,10 @@ const experiences = [
     category: 'Internship / Full Stack',
     title: 'idThirdeye Technology Solutions',
     url: 'idthirdeye.com',
-    subtitle: 'Full Stack Developer Intern — 30 June to 29 July 2026',
+    subtitle: 'Full Stack Developer Intern � 30 June to 29 July 2026',
     desc: 'Worked on real-world projects using modern web technologies. Gained hands-on experience in building scalable applications and exploring new technologies.',
     tags: ['Full Stack', 'Remote'],
-    image: '/assets/tech1.jpg',
+    image: '/assets/intern.jpg',
     githubLink: null,
     demoLink: '#'
   },
@@ -64,18 +64,18 @@ const experiences = [
     subtitle: 'B.E. Computer Science and Engineering | 2023 - 2027',
     desc: 'Undergraduate Student maintaining a CGPA of 7.25. Exploring modern web technologies, AI/ML, and game development.',
     tags: ['CSE', 'B.E.', 'Student'],
-    image: '/assets/about_card_photo.jpg',
+    image: '/assets/pec.jpg',
     githubLink: null,
     demoLink: null
   },
   {
     category: 'Achievement',
-    title: 'CODEATHON 4.0 – Special Prize',
+    title: 'CODEATHON 4.0 � Special Prize',
     url: 'codeathon2026.com',
-    subtitle: 'Special Prize Winner — 2026',
+    subtitle: 'Special Prize Winner � 2026',
     desc: 'Participated in CODEATHON 4.0 organized by the Department of Computer Science and Engineering & Computer Science and Business Systems at Prathyusha Engineering College and secured a Special Prize.',
     tags: ['Award', 'Hackathon'],
-    image: '/assets/card_dsa.jpg',
+    image: '/assets/achievement.jpg',
     githubLink: null,
     demoLink: null
   }
