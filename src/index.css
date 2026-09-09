@@ -23,7 +23,7 @@
 
 @layer utilities {
   .wrap {
-    @apply max-w-container mx-auto px-gutter;
+    @apply w-full max-w-container 3xl:max-w-[1700px] 4k:max-w-[2200px] mx-auto px-gutter;
   }
   
   .eyebrow-pill {

@@ -30,7 +30,7 @@ const TechStack: React.FC = () => {
         >
           <div>
             <span className="eyebrow-pill mb-6"><span className="dot"></span> Skills</span>
-            <h2 className="font-display text-[clamp(40px,5vw,54px)] font-normal tracking-[-0.03em] m-0 leading-[1.1]">My Tech Stack</h2>
+            <h2 className="font-display text-[clamp(40px,5vw,54px)] 3xl:text-[72px] 4k:text-[96px] font-normal tracking-[-0.03em] m-0 leading-[1.1]">My Tech Stack</h2>
           </div>
         </motion.div>
         
@@ -39,8 +39,8 @@ const TechStack: React.FC = () => {
           className="bg-bg-card rounded-lg p-10 md:p-[60px] flex flex-col md:flex-row gap-10 md:gap-[60px] items-center mb-10"
         >
           <div className="flex-1">
-            <h3 className="font-display text-[28px] font-medium mb-4">Overview</h3>
-            <p className="text-[16px] text-ink-soft leading-[1.6]">I build full stack applications using modern technologies and frameworks to deliver scalable, efficient and user-friendly digital experiences.</p>
+            <h3 className="font-display text-[28px] 3xl:text-[36px] 4k:text-[48px] font-medium mb-4">Overview</h3>
+            <p className="text-[16px] 3xl:text-[20px] 4k:text-[24px] text-ink-soft leading-[1.6]">I build full stack applications using modern technologies and frameworks to deliver scalable, efficient and user-friendly digital experiences.</p>
           </div>
           <div className="flex-1 flex gap-[15px]">
             <img src="/assets/tech1.jpg" alt="Laptop with purple lighting" className="w-[30%] h-[160px] object-cover rounded-md" />
@@ -51,7 +51,7 @@ const TechStack: React.FC = () => {
         
         <hr className="border-t border-line my-[60px]" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[40px] gap-y-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3 gap-x-[40px] gap-y-[60px] 3xl:gap-y-[80px]">
           {/* Programming Languages */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={containerVariants}>
             <motion.h3 variants={itemVariants} className="font-display text-[20px] font-medium mb-6">Programming Languages</motion.h3>

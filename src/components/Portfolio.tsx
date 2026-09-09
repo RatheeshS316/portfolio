@@ -46,7 +46,7 @@ const Portfolio: React.FC = () => {
 
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-[100px]"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 3xl:grid-cols-5 4k:grid-cols-6 gap-6 mb-[100px]"
         >
           {portfolioItems.map((item, i) => (
             <motion.a 
@@ -73,13 +73,13 @@ const Portfolio: React.FC = () => {
 
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={revealVariants}
-          className="bg-ink text-white rounded-[24px] p-10 md:p-[80px] flex flex-col items-center text-center" id="cta"
+          className="bg-ink text-white rounded-[24px] p-10 md:p-[80px] 3xl:p-[120px] flex flex-col items-center text-center" id="cta"
         >
-          <h3 className="font-display text-[clamp(32px,4vw,42px)] font-normal tracking-[-0.02em] m-0 mb-5">Have a Project in Mind?</h3>
-          <p className="text-[17px] text-white/70 leading-[1.6] max-w-[500px] m-0 mb-10">I am currently available for freelance work! If you are looking for a developer to build your next web application, website, or digital product, I can help bring your vision to life.</p>
-          <Link to="/contact" className="inline-flex items-center gap-[6px] text-[15px] font-medium text-ink bg-white px-8 py-4 rounded-full transition-opacity duration-200 hover:opacity-90">
+          <h3 className="font-display text-[clamp(32px,4vw,42px)] 3xl:text-[64px] 4k:text-[80px] font-normal tracking-[-0.02em] m-0 mb-5">Have a Project in Mind?</h3>
+          <p className="text-[17px] 3xl:text-[24px] 4k:text-[32px] text-white/70 leading-[1.6] max-w-[500px] 3xl:max-w-[800px] 4k:max-w-[1000px] m-0 mb-10">I am currently available for freelance work! If you are looking for a developer to build your next web application, website, or digital product, I can help bring your vision to life.</p>
+          <Link to="/contact" className="inline-flex items-center gap-[6px] text-[15px] 3xl:text-[20px] 4k:text-[26px] font-medium text-ink bg-white px-8 py-4 3xl:px-12 3xl:py-6 rounded-full transition-opacity duration-200 hover:opacity-90">
             <span>Book A Call</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[14px] h-[14px]"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[14px] h-[14px] 3xl:w-5 3xl:h-5 4k:w-6 4k:h-6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </Link>
         </motion.div>
       </div>

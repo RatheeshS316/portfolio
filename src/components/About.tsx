@@ -15,7 +15,7 @@ const About: React.FC = () => {
 
   return (
     <section className="pt-[120px] pb-[80px] bg-bg-card rounded-t-lg md:rounded-t-[40px] relative mt-[-20px] z-10" id="about" aria-label="About me">
-      <div className="wrap grid grid-cols-1 md:grid-cols-[1fr_minmax(280px,320px)_1fr] gap-[60px] md:gap-[40px] items-start">
+      <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_minmax(280px,320px)_1fr] gap-[60px] lg:gap-[40px] items-start">
         
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={revealVariants}

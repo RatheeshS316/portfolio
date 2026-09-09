@@ -139,7 +139,7 @@ const Experience: React.FC = () => {
               </div>
 
               {/* Right Side: Content */}
-              <div className="w-full lg:w-[50%] p-8 lg:p-12 flex flex-col justify-center">
+              <div className="w-full lg:w-[50%] p-8 lg:p-12 3xl:p-16 flex flex-col justify-center">
                 <div className="flex items-center justify-between mb-6">
                   <span className="px-3.5 py-1.5 rounded-full bg-purple-500/10 text-purple-400 text-[13px] font-medium border border-purple-500/20">
                     {exp.category}
@@ -149,7 +149,7 @@ const Experience: React.FC = () => {
                   </span>
                 </div>
                 
-                <h3 className="text-[32px] font-bold text-white mb-3 tracking-tight">{exp.title}</h3>
+                <h3 className="text-[32px] 3xl:text-[48px] 4k:text-[64px] font-bold text-white mb-3 tracking-tight">{exp.title}</h3>
                 
                 {exp.subtitle && (
                   <div className="flex items-start gap-2 mb-6 text-purple-400 text-[15px] font-medium">
@@ -160,7 +160,7 @@ const Experience: React.FC = () => {
                   </div>
                 )}
 
-                <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
+                <p className="text-gray-400 text-[15px] 3xl:text-[20px] 4k:text-[24px] leading-relaxed mb-8">
                   {exp.desc}
                 </p>
 

@@ -28,7 +28,7 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-[100] bg-bg">
       <nav className="wrap flex items-center justify-between py-7" aria-label="Primary">
         <a href="/#top" className="flex items-center outline-offset-[6px]" aria-label="S. Ratheesh — home">
-          <img src="/assets/sr_logo.png" alt="S. Ratheesh Logo" className="h-[85px] w-auto mix-blend-multiply contrast-[1.1] brightness-[1.05]" />
+          <img src="/assets/sr_logo.png" alt="S. Ratheesh Logo" className="h-[85px] 3xl:h-[110px] 4k:h-[140px] w-auto mix-blend-multiply contrast-[1.1] brightness-[1.05]" />
         </a>
 
         <ul className="hidden md:flex items-center gap-10 list-none m-0 p-0">
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <li key={link.id} className="relative">
               <a 
                 href={`/#${link.id}`} 
-                className={`text-[15px] font-medium relative pb-1 transition-all duration-250 ease-out z-10 block ${activeSection === link.id ? 'text-ink' : 'text-ink/80 hover:text-ink after:content-[\"\"] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full'}`}
+                className={`text-[15px] 3xl:text-[18px] 4k:text-[22px] font-medium relative pb-1 transition-all duration-250 ease-out z-10 block ${activeSection === link.id ? 'text-ink' : 'text-ink/80 hover:text-ink after:content-[\"\"] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full'}`}
               >
                 {link.label}
               </a>
@@ -50,16 +50,16 @@ const Header: React.FC = () => {
               )}
             </li>
           ))}
-          <li><a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] text-ink/80 relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full hover:text-ink transition-all duration-250 ease-out">My Resume</a></li>
+          <li><a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[15px] 3xl:text-[18px] 4k:text-[22px] text-ink/80 relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1.5px] after:bg-ink hover:after:w-full hover:text-ink transition-all duration-250 ease-out">My Resume</a></li>
         </ul>
 
-        <Link to="/contact" className="hidden md:inline-flex link-arrow">
+        <Link to="/contact" className="hidden md:inline-flex link-arrow 3xl:text-[18px] 4k:text-[22px]">
           <span>Book A Call</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="3xl:w-5 3xl:h-5 4k:w-6 4k:h-6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </Link>
 
         <button 
-          className="md:hidden flex flex-col items-center justify-center gap-[5px] w-10 h-10 bg-transparent border-none p-0 cursor-pointer" 
+          className="md:hidden flex flex-col items-center justify-center gap-[5px] w-12 h-12 bg-transparent border-none p-0 cursor-pointer" 
           aria-label="Toggle menu" 
           aria-expanded={menuOpen}
           onClick={toggleMenu}

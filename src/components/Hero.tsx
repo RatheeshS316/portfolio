@@ -46,32 +46,32 @@ const Hero: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="flex gap-[40px] mb-[40px] lg:mb-[60px]">
             <div>
-              <p className="font-display text-[42px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">30+</p>
-              <p className="text-[14px] font-light text-ink-soft m-0 max-w-[80px] leading-[1.4]">Projects completed</p>
+              <p className="font-display text-[42px] 3xl:text-[60px] 4k:text-[80px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">30+</p>
+              <p className="text-[14px] 3xl:text-[18px] 4k:text-[22px] font-light text-ink-soft m-0 max-w-[80px] 3xl:max-w-[120px] 4k:max-w-[160px] leading-[1.4]">Projects completed</p>
             </div>
             <div>
-              <p className="font-display text-[42px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">100+</p>
-              <p className="text-[14px] font-light text-ink-soft m-0 max-w-[80px] leading-[1.4]">Coding Count</p>
+              <p className="font-display text-[42px] 3xl:text-[60px] 4k:text-[80px] font-thin leading-none tracking-[-0.03em] m-0 mb-2">100+</p>
+              <p className="text-[14px] 3xl:text-[18px] 4k:text-[22px] font-light text-ink-soft m-0 max-w-[80px] 3xl:max-w-[120px] 4k:max-w-[160px] leading-[1.4]">Coding Count</p>
             </div>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="font-display text-[clamp(80px,10vw,160px)] font-light leading-[0.85] tracking-[-0.04em] m-0 mb-[20px] lg:mb-[30px]">
+          <motion.h1 variants={itemVariants} className="font-display text-[clamp(80px,10vw,160px)] 3xl:text-[200px] 4k:text-[280px] font-light leading-[0.85] tracking-[-0.04em] m-0 mb-[20px] lg:mb-[30px]">
             Hello
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-[clamp(14px,2vw,22px)] font-extralight text-ink-soft leading-[1.3] m-0 flex gap-[15px] whitespace-nowrap">
+          <motion.p variants={itemVariants} className="text-[clamp(14px,2vw,22px)] 3xl:text-[28px] 4k:text-[36px] font-extralight text-ink-soft leading-[1.3] m-0 flex gap-[15px] whitespace-nowrap">
             <span className="font-extralight">—</span> It's S.Ratheesh a FullStack Developer
           </motion.p>
 
           <motion.img 
             variants={itemVariants}
-            className="block lg:hidden rounded-[20px] mt-[40px] mb-[40px] w-full max-w-[340px] object-contain aspect-[3/3.6]" 
+            className="block lg:hidden mx-auto rounded-[20px] mt-[40px] mb-[40px] w-full max-w-[340px] object-contain aspect-[3/3.6]" 
             src="/assets/portrait_hero_transparent.png" 
             alt="Portrait of S. Ratheesh, FullStack Developer, wearing a dark blazer over a white shirt" 
           />
 
           <motion.button 
             variants={itemVariants}
-            className="hidden lg:inline-flex mt-[80px] bg-transparent border-none p-0 items-center gap-[10px] text-[14px] font-light uppercase tracking-[0.05em] text-ink cursor-pointer hover:opacity-70 transition-opacity" 
+            className="hidden lg:inline-flex mt-[80px] 3xl:mt-[120px] bg-transparent border-none p-0 items-center gap-[10px] text-[14px] 3xl:text-[18px] 4k:text-[22px] font-light uppercase tracking-[0.05em] text-ink cursor-pointer hover:opacity-70 transition-opacity" 
             onClick={scrollToAbout}
           >
             Scroll down
