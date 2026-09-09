@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   
   const sectionIds = useMemo(() => ['top', 'about', 'portfolio', 'experience', 'blog'], []);
   const activeSection = useActiveSection(sectionIds);
@@ -19,16 +20,36 @@ const Header: React.FC = () => {
   const getMobileLinkClass = (section: string) =>
     `p-[18px_var(--gutter)] text-[17px] border-b border-line transition-colors ${activeSection === section ? 'bg-ink/5 font-semibold text-ink' : 'text-ink/80'}`;
 
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const ctaElement = document.getElementById('cta');
+      if (ctaElement) {
+        const rect = ctaElement.getBoundingClientRect();
+        // Hide header if the CTA box enters the viewport
+        if (rect.top <= window.innerHeight) {
+          setIsHidden(true);
+        } else {
+          setIsHidden(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-[100] bg-bg">
-      <nav className="wrap flex items-center justify-between py-7" aria-label="Primary">
+    <header className={`sticky top-0 z-[100] bg-bg transition-transform duration-300 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
+      <nav className="wrap flex items-center justify-between py-3 3xl:py-5" aria-label="Primary">
         <a href="/#top" className="flex items-center outline-offset-[6px]" aria-label="S. Ratheesh — home">
-          <img src="/assets/sr_logo.png" alt="S. Ratheesh Logo" className="h-[85px] 3xl:h-[110px] 4k:h-[140px] w-auto mix-blend-multiply contrast-[1.1] brightness-[1.05]" />
+          <img src="/assets/sr_logo.png" alt="S. Ratheesh Logo" className="h-[60px] 3xl:h-[80px] 4k:h-[100px] w-auto mix-blend-multiply contrast-[1.1] brightness-[1.05]" />
         </a>
 
         <ul className="hidden md:flex items-center gap-10 list-none m-0 p-0">
