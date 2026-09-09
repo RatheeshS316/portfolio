@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 const experiences = [
   {
@@ -82,7 +83,7 @@ const experiences = [
 ];
 
 const Experience: React.FC = () => {
-  const revealVariants = {
+  const revealVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
   };

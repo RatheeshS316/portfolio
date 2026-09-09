@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 const portfolioItems = [
   { category: 'Development', time: '5 min read', title: 'DSA', desc: 'Mastering Data Structures and Algorithms for problem solving and efficient coding.', img: '/assets/card_dsa.jpg' },
@@ -14,7 +15,7 @@ const portfolioItems = [
 ];
 
 const Portfolio: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -22,12 +23,12 @@ const Portfolio: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
-  const revealVariants = {
+  const revealVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
   };

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 const About: React.FC = () => {
-  const revealVariants = {
+  const revealVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
       opacity: 1, 
