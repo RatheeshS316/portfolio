@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
 
           <motion.img 
             variants={itemVariants}
-            className="block lg:hidden mx-auto rounded-[20px] mt-[40px] mb-[40px] w-full max-w-[340px] object-contain aspect-[3/3.6]" 
+            className="block lg:hidden mx-auto rounded-[20px] mt-[40px] mb-[40px] w-full max-w-[340px] object-contain aspect-[3/3.6] brightness-110 contrast-105 saturate-105" 
             src="/assets/portrait_hero_transparent.png" 
             alt="Portrait of S. Ratheesh, FullStack Developer, wearing a dark blazer over a white shirt" 
           />
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-cover brightness-110 contrast-105 saturate-105" 
             src="/assets/portrait_hero_transparent.png" 
             alt="Portrait of S. Ratheesh" 
           />
